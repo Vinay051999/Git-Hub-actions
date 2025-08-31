@@ -5,12 +5,21 @@ on:
         branches:
             - main
             - test
-
+    pull_request:     
+        branches:
+            - main
+            
 jobs:
     multi_event_pipeline:
         runs-on: ubuntu-latest
         steps:
             - name: "Print Hello World"
               run: echo "Hello World from Multi Event Pipeline"
+
+    on-pull_request: #job name
+     runs-on: ubuntu-latest
+     steps:
+       - name: "Runing Pull Request Event"
+         run: echo "Running on Pull Request request"         
 
           
