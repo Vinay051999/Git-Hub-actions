@@ -1,0 +1,16 @@
+name: "Multi Event Pipeline"
+
+on:
+    push:
+        branches:
+            - main
+            - test
+
+jobs:
+    multi_event_pipeline:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Print Hello World"
+              run: echo "Hello World from Multi Event Pipeline"
+
+          
