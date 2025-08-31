@@ -11,7 +11,8 @@ on:
             - test
             
 jobs:
-    multi_event_pipeline:
+    on-push: #job name
+        if: github.event_name == 'push'
         runs-on: ubuntu-latest
         steps:
             - name: "Print Hello World"
