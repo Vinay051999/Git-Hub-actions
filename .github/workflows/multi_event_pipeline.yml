@@ -1,0 +1,28 @@
+name: "Multi Event Pipeline"
+
+on:
+    push:
+        branches:
+            - main
+            - test
+    pull_request:     
+        branches:
+            - main
+            - test
+            
+jobs:
+    on-push: #job name
+        if: github.event_name == 'push'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Print Hello World"
+              run: echo "Hello World from Multi Event Pipeline"
+
+    on-pull_request: #job name
+        if: github.event_name == 'pull_request'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Runing Pull Request Event"
+              run: echo "Running on Pull Request request"
+
+          
